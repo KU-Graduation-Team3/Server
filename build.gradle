@@ -35,6 +35,9 @@ dependencies {
 	implementation 'mysql:mysql-connector-java:8.0.33'
 	runtimeOnly 'com.h2database:h2'
 
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+
 }
 
 tasks.named('test') {
