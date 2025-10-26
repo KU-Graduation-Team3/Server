@@ -13,6 +13,7 @@ public class RestClientConfig {
     RestClient crawlerClient(@Value("${crawler.base-url}") String baseUrl) {
         var rf = new SimpleClientHttpRequestFactory();
         rf.setConnectTimeout(1500);
+        rf.setReadTimeout(180000);
         return RestClient.builder().baseUrl(baseUrl).requestFactory(rf).build();
     }
 
@@ -20,6 +21,7 @@ public class RestClientConfig {
     RestClient sentimentClient(@Value("${sentiment.base-url}") String baseUrl) {
         var rf = new SimpleClientHttpRequestFactory();
         rf.setConnectTimeout(1500);
+        rf.setReadTimeout(180000);
         return RestClient.builder().baseUrl(baseUrl).requestFactory(rf).build();
     }
 }
