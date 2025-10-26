@@ -2,6 +2,7 @@ package com.example.KuGraduation.domain.news.client;
 
 import com.example.KuGraduation.domain.news.dto.request.SentimentItem;
 import com.example.KuGraduation.domain.news.dto.request.SentimentRequest;
+import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -11,13 +12,10 @@ import java.util.Collections;
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
 public class SentimentApiClient {
 
     private final RestClient sentimentClient;
-
-    public SentimentApiClient(RestClient sentimentClient) {
-        this.sentimentClient = sentimentClient;
-    }
 
     public List<SentimentItem> predict(List<String> texts) {
         List<SentimentItem> body = this.sentimentClient.post()
