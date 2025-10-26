@@ -1,21 +1,17 @@
 package com.example.KuGraduation.domain.news.dto.response;
 
-import com.example.KuGraduation.domain.news.constant.Overall;
-import com.example.KuGraduation.domain.news.dto.request.SentimentItem;
-
-import java.util.List;
+import com.example.KuGraduation.domain.news.constant.StockAnalysisResult;
 
 public record AnalysisResult(
         String stockCode,
         int sentenceCount,
         int totalScore,
-        Overall overall,
+        StockAnalysisResult result,
         int positiveCount,
         int neutralCount,
-        int negativeCount,
-        List<SentimentItem> sampleTop5 // 미리보기
+        int negativeCount
 ) {
     public static AnalysisResult empty(String code) {
-        return new AnalysisResult(code, 0, 0, Overall.NEUTRAL, 0, 0, 0, List.of());
+        return new AnalysisResult(code, 0, 0, StockAnalysisResult.NEUTRAL, 0, 0, 0);
     }
 }
