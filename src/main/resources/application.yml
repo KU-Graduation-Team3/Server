@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ku-grad
+
+---
+server:
+  port: 8080
+
+crawler:
+  base-url: ${CRAWLER_BASE_URL}
+sentiment:
+  base-url: ${SENTIMENT_BASE_URL}
+spring:
+  main:
+    banner-mode: "off"
